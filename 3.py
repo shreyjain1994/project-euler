@@ -3,21 +3,7 @@ Problem 3: What is the largest prime factor of the number 600851475143?
 """
 
 import math
-
-
-def is_prime(n):
-    """
-    Determine if n is a prime number.
-
-    :rtype: bool
-    """
-
-    if n < 2:
-        return False
-
-    upper_bound = int(math.sqrt(n))
-
-    return not any(n % i == 0 for i in range(2, upper_bound + 1))
+from helpers import is_prime
 
 
 def largest_prime_factor(n):
