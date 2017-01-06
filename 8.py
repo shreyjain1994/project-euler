@@ -1,5 +1,5 @@
 """
-Project 8:
+Problem 8: Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.
 """
 
 from helpers import product

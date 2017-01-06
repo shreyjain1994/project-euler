@@ -1,3 +1,7 @@
+"""
+Problem 10: Find sum of all prime numbers less than 2000000.
+"""
+
 from helpers import primes
 
 total = 0
