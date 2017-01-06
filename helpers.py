@@ -20,6 +20,27 @@ def is_prime(n):
     return not any(n % i == 0 for i in range(2, upper_bound + 1))
 
 
+def product(ls):
+    """
+    Determine the product of all the numbers in iter.
+
+    Usage:
+
+    >>> product([1,2,4,5])
+    40
+    >>> product([-5,8,2])
+    -80
+    >>> product([3,0,9,87])
+    0
+    """
+
+    p = 1
+    for i in ls:
+        p *= i
+
+    return p
+
+
 def primes():
     """
     An unlimited generator of prime numbers: 2,3,5,7...
