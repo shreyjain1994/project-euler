@@ -22,7 +22,7 @@ def is_prime(n):
 
 def product(ls):
     """
-    Determine the product of all the numbers in iter.
+    Determine the product of all the numbers in ls.
 
     Usage:
 
