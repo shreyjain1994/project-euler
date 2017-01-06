@@ -2,6 +2,7 @@
 Problem 4: Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
+
 def is_palindrome(n):
     """
     Determine if integer n is a palindrome (i.e. reads the same backwards and forwards).

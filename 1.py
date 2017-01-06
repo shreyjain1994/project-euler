@@ -7,4 +7,4 @@ multiples_of_five = sum(range(0, 1000, 5))
 multiples_of_fifteen = sum(range(0, 1000, 15))
 
 # multiples of fifteen are counted as both mul of 3 and 5, hence we need to subtract 1 'set' of them
-print (multiples_of_five + multiples_of_three - multiples_of_fifteen)
+print(multiples_of_five + multiples_of_three - multiples_of_fifteen)
