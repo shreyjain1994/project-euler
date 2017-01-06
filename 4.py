@@ -1,0 +1,37 @@
+def is_palindrome(n):
+    """
+    Determine if integer n is a palindrome (i.e. reads the same backwards and forwards).
+
+    :param int n: The number to check.
+    :rtype: bool
+    """
+
+    string = str(n)
+    return string == string[::-1]
+
+
+def largest_palindrome(n):
+    """
+    Determine the largest palindrome made from a product of two n-digit numbers.
+
+    :rtype: int
+    """
+
+    # the smallest n-digit number
+    lower = pow(10, n - 1)
+
+    # the largest n-digit number
+    upper = pow(10, n) - 1
+
+    largest = 0
+
+    for i in range(lower, upper + 1):
+        for j in range(i, upper + 1):
+            product = i * j
+            if product > largest and is_palindrome(product):
+                largest = product
+
+    return largest
+
+
+print(largest_palindrome(3))
