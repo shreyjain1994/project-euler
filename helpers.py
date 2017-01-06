@@ -43,4 +43,3 @@ def primes():
             i += 1
             found_prime = is_prime(i)
         yield i
-
