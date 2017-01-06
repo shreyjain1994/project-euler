@@ -56,11 +56,13 @@ def primes():
     5
     """
 
+    yield 2
+
     i = 1
 
     while True:
         found_prime = False
         while not found_prime:
-            i += 1
+            i += 2
             found_prime = is_prime(i)
         yield i
