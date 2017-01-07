@@ -12,12 +12,19 @@ def is_prime(n):
     :rtype: bool
     """
 
-    if n < 2:
+    if n <= 1:
+        return False
+    elif n <= 3:
+        return True
+
+    # is even number -> uses bit operation, small optimization but may be worth it if calling this function often
+    elif n & 1 == 0:
         return False
 
     upper_bound = int(math.sqrt(n))
 
-    return not any(n % i == 0 for i in range(2, upper_bound + 1))
+    # odd numbers can only have odd factors, so increment is 2
+    return not any(n % i == 0 for i in range(3, upper_bound + 1, 2))
 
 
 def product(ls):
@@ -48,12 +55,8 @@ def primes():
     Usage:
 
     >>> gen = primes()
-    >>> next(gen)
-    2
-    >>> next(gen)
-    3
-    >>> next(gen)
-    5
+    >>> [next(gen) for i in range(20)]
+    [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
     """
 
     yield 2
@@ -61,10 +64,9 @@ def primes():
     i = 1
 
     while True:
-        found_prime = False
-        while not found_prime:
+        i += 2
+        while not is_prime(i):
             i += 2
-            found_prime = is_prime(i)
         yield i
 
 
