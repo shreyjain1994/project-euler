@@ -7,42 +7,16 @@ from operator import itemgetter
 
 
 class Card(object):
-    _ranks = {'T': 10,
-              'J': 11,
-              'Q': 12,
-              'K': 13,
-              'A': 14}
-
-    _rank_names = {11: 'Jack',
-                   12: 'Queen',
-                   13: 'King',
-                   14: 'Ace'}
-
-    _suits = {'C': 1,
-              'D': 2,
-              'H': 3,
-              'S': 4}
-
-    _suit_names = {1: 'Clubs',
-                   2: 'Diamonds',
-                   3: 'Hearts',
-                   4: 'Spades'}
-
     def __init__(self, card):
         """
         Create a card object.
 
         :param str card: A string representing a card. For example, 4S represents a 4 of spades. Use T for 10.
         """
-        rank = card[0].upper()
-        suit = card[1].upper()
-        self.rank = self._ranks[rank] if rank in self._ranks else int(rank)
-        self.suit = self._suits[suit]
-
-    def __repr__(self):
-        rank = self._rank_names.get(self.rank, str(self.rank))
-        suit = self._suit_names[self.suit]
-        return "{rank} of {suit}".format(rank=rank, suit=suit)
+        ranks = {key: index + 2 for index, key in enumerate("23456789TJQKA")}
+        suits = {key: index + 1 for index, key in enumerate("CDHS")}
+        self.rank = ranks[card[0].upper()]
+        self.suit = suits[card[1].upper()]
 
     def __lt__(self, other):
         return (self.rank, self.suit) < (other.rank, other.suit)
