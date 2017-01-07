@@ -80,6 +80,8 @@ def factors(n, sort=False):
     [1, 2, 4, 7, 14, 28]
     >>> factors(9, sort=True)
     [1, 3, 9]
+    >>> factors(105, sort=True)
+    [1, 3, 5, 7, 15, 21, 35, 105]
 
     :param bool sort: Whether or not to sort the factors list. Defaults to False
     :param int n: The numbers to find the factors of.
