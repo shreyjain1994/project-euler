@@ -66,3 +66,40 @@ def primes():
             i += 2
             found_prime = is_prime(i)
         yield i
+
+
+def factors(n, sort=False):
+    """
+    Create a list of all factors of n.
+
+    Usage:
+
+    >>> factors(4, sort=True)
+    [1, 2, 4]
+    >>> factors(28, sort=True)
+    [1, 2, 4, 7, 14, 28]
+
+    :param bool sort: Whether or not to sort the factors list. Defaults to False
+    :param int n: The numbers to find the factors of.
+    :rtype: list
+    """
+
+    f = []
+
+    upper_bound = int(math.sqrt(n))
+
+    for i in range(1, upper_bound + 1):
+        if n % i == 0:
+            f.append(i)
+            f.append(n // i)
+
+    # needed to remove duplicate factor when n is a perfect square.
+    # i.e. n=4 would create the list [1,4,2,2] and thus need to remove duplicate 2
+    # could potentially use sets to avoid duplicates, but too much overheard in comparison to this
+    if f[-2] == f[-1]:
+        f.pop()
+
+    if sort:
+        f.sort()
+
+    return f
