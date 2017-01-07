@@ -1,6 +1,6 @@
 """
 Problem 11: What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or
-diagonally) in the provided 20×20 grid?
+diagonally) in the provided 20x20 grid?
 """
 
 
