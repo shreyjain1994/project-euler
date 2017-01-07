@@ -78,6 +78,8 @@ def factors(n, sort=False):
     [1, 2, 4]
     >>> factors(28, sort=True)
     [1, 2, 4, 7, 14, 28]
+    >>> factors(9, sort=True)
+    [1, 3, 9]
 
     :param bool sort: Whether or not to sort the factors list. Defaults to False
     :param int n: The numbers to find the factors of.
@@ -88,7 +90,11 @@ def factors(n, sort=False):
 
     upper_bound = int(math.sqrt(n))
 
-    for i in range(1, upper_bound + 1):
+    # since odd numbers only have odd factors, this will ensure only odd numbers are checked as factors when n is odd
+    # this will cut the number of mod operations required by half when given an odd number
+    increment = n % 2 + 1
+
+    for i in range(1, upper_bound + 1, increment):
         if n % i == 0:
             f.append(i)
             f.append(n // i)
