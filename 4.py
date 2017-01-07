@@ -2,17 +2,7 @@
 Problem 4: Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
-
-def is_palindrome(n):
-    """
-    Determine if integer n is a palindrome (i.e. reads the same backwards and forwards).
-
-    :param int n: The number to check.
-    :rtype: bool
-    """
-
-    string = str(n)
-    return string == string[::-1]
+import helpers
 
 
 def largest_palindrome(n):
@@ -33,7 +23,7 @@ def largest_palindrome(n):
     for i in range(lower, upper + 1):
         for j in range(i, upper + 1):
             product = i * j
-            if product > largest and is_palindrome(product):
+            if product > largest and helpers.is_palindrome(product):
                 largest = product
 
     return largest

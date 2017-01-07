@@ -70,6 +70,33 @@ def primes():
         yield i
 
 
+def is_palindrome(n, case_sensitive=False):
+    """
+    Determine if n is a palindrome (i.e. reads the same backwards and forwards). If n is not a string, then the string
+    representation of n will be checked instead.
+
+    >>> is_palindrome(505)
+    True
+    >>> is_palindrome(2918)
+    False
+    >>> is_palindrome("hello")
+    False
+    >>> is_palindrome("racecar")
+    True
+    >>> is_palindrome("RacEcar", case_sensitive=True)
+    False
+    >>> is_palindrome("RaCecar")
+    True
+
+    :param n: The text to check to see if it is a palindrome.
+    :param bool case_sensitive: Whether to incorporate capitalization in check for palindrome.
+    :rtype: bool
+    """
+
+    text = str(n).lower() if not case_sensitive else str(n)
+    return text == text[::-1]
+
+
 def factors(n, sort=False):
     """
     Create a list of all factors of n.
