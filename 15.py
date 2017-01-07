@@ -1,5 +1,5 @@
 """
-Problem 5: How many routes are there through a 20x20 grid if you can only move right or down each time.
+Problem 15: How many routes are there through a 20x20 grid if you can only move right or down each time.
 
 Algorithm: Dynamic Programming
 """
