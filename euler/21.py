@@ -2,7 +2,7 @@
 Problem 21: Evaluate the sum of all the amicable numbers under 10000.
 """
 
-from helpers import factors
+from euler.helpers import factors
 
 sum_of_divisors = [0] * 10000
 

@@ -2,7 +2,7 @@
 Problem 36: Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.
 """
 
-import helpers
+from euler import helpers
 
 
 def solve():

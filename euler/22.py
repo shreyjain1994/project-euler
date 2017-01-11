@@ -24,7 +24,7 @@ def word_value(word):
     return sum(ord(i) - 96 for i in word)
 
 
-with open("./resources/22.txt") as f:
+with open("../resources/22.txt") as f:
     string = f.read()
 
 names = [i[1:-1] for i in string.split(",")]

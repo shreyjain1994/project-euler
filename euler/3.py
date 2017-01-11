@@ -3,7 +3,8 @@ Problem 3: What is the largest prime factor of the number 600851475143?
 """
 
 import math
-from helpers import is_prime
+
+from euler.helpers import is_prime
 
 
 def largest_prime_factor(n):

@@ -98,7 +98,7 @@ class PokerHand(object):
 
 player_one_wins = 0
 
-with open("./resources/54.txt") as f:
+with open("../resources/54.txt") as f:
     for line in f:
         c = [Card(i) for i in line.split(" ")]
         hand_one = PokerHand(c[0:5])

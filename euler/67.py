@@ -5,7 +5,7 @@ numbers on the next row.
 Algorithm: Dynamic Programming
 """
 
-with open("./resources/67.txt") as f:
+with open("../resources/67.txt") as f:
     string = f.read().strip()
 
 grid = [[int(i) for i in j.split(" ")] for j in string.split("\n")]
