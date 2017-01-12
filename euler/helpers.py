@@ -152,3 +152,20 @@ def get_resource_path(number):
     """
     resource = "../resources/{}.txt".format(number)
     return os.path.join(os.path.dirname(__file__), resource)
+
+
+def is_pythagorean_triplet(a, b, c):
+    """
+    Determine if a, b, and c are pythagorean triplets. I.e. They make the equation a^2 + b^2 = c^2 true.
+
+    Usage:
+
+    >>> is_pythagorean_triplet(3,4,5)
+    True
+    >>> is_pythagorean_triplet(3,4,6)
+    False
+
+    :rtype: bool
+    """
+
+    return a*a + b*b == c*c

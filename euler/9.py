@@ -2,22 +2,7 @@
 Problem 9: Find the product of the pythagorean triplet for which the sum is 1000.
 """
 
-
-def is_pythagorean_triplet(a, b, c):
-    """
-    Determine if a, b, and c are pythagorean triplets. I.e. They make the equation a^2 + b^2 = c^2 true.
-
-    Usage:
-
-    >>> is_pythagorean_triplet(3,4,5)
-    True
-    >>> is_pythagorean_triplet(3,4,6)
-    False
-
-    :rtype: bool
-    """
-
-    return pow(a, 2) + pow(b, 2) == pow(c, 2)
+from . import helpers
 
 
 def solve():
@@ -31,5 +16,5 @@ def solve():
 
         for j in range(i + 1, max_b + 1):
             k = 1000 - i - j
-            if is_pythagorean_triplet(i, j, k):
+            if helpers.is_pythagorean_triplet(i, j, k):
                 return i * j * k
