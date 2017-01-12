@@ -39,18 +39,19 @@ class Collatz:
         return chain_length
 
 
-collatz = Collatz()
+def solve():
+    collatz = Collatz()
 
-# the starting value with the longest collatz chain
-max_length_term = 1
+    # the starting value with the longest collatz chain
+    max_length_term = 1
 
-# the length of the longest collatz chain
-max_length = 1
+    # the length of the longest collatz chain
+    max_length = 1
 
-for i in range(1, 1000000):
-    length = collatz.length(i)
-    if length > max_length:
-        max_length = length
-        max_length_term = i
+    for i in range(1, 1000000):
+        length = collatz.length(i)
+        if length > max_length:
+            max_length = length
+            max_length_term = i
 
-print(max_length_term)
+    return max_length_term

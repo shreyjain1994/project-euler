@@ -15,13 +15,13 @@ def fib():
         yield first
 
 
-fib = fib()
-total = 0
-while True:
-    current = next(fib)
-    if current > 4000000:
-        break
-    if current % 2 == 0:
-        total += current
-
-print(total)
+def solve():
+    gen = fib()
+    total = 0
+    while True:
+        current = next(gen)
+        if current > 4000000:
+            break
+        if current % 2 == 0:
+            total += current
+    return total

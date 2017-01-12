@@ -27,11 +27,12 @@ def fib():
         yield first
 
 
-gen = fib()
-index = 0
-while True:
-    index += 1
-    if len(str(next(gen))) == 1000:
-        break
+def solve():
+    gen = fib()
+    index = 0
+    while True:
+        index += 1
+        if len(str(next(gen))) == 1000:
+            break
 
-print(index)
+    return index

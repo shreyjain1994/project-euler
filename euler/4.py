@@ -2,7 +2,7 @@
 Problem 4: Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
-from euler import helpers
+from . import helpers
 
 
 def largest_palindrome(n):
@@ -29,4 +29,5 @@ def largest_palindrome(n):
     return largest
 
 
-print(largest_palindrome(3))
+def solve():
+    return largest_palindrome(3)

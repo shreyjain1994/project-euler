@@ -2,7 +2,7 @@
 Problem 12: What is the value of the first triangle number to have over five hundred divisors?
 """
 
-from euler.helpers import factors
+from . import helpers
 
 
 def triangle_numbers():
@@ -32,9 +32,9 @@ def triangle_numbers():
         yield current
 
 
-gen = triangle_numbers()
-while True:
-    current = next(gen)
-    if len(factors(current)) > 500:
-        print(current)
-        break
+def solve():
+    gen = triangle_numbers()
+    while True:
+        current = next(gen)
+        if len(helpers.factors(current)) > 500:
+            return current

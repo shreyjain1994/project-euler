@@ -2,9 +2,11 @@
 Problem 8: Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.
 """
 
-from euler.helpers import product
+from . import helpers
 
-number = '''73167176531330624919225119674426574742355349194934
+
+def solve():
+    number = '''73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
 12540698747158523863050715693290963295227443043557
@@ -25,15 +27,15 @@ number = '''73167176531330624919225119674426574742355349194934
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450'''
 
-# ensure the number string only contains numbers (no newlines)
-number = number.strip().replace("\n", "")
+    # ensure the number string only contains numbers (no newlines)
+    number = number.strip().replace("\n", "")
 
-max_product = 0
+    max_product = 0
 
-for j in range(0, len(number) - 13):
-    numbers = [int(i) for i in number[j:j + 13]]
-    p = product(numbers)
-    if p > max_product:
-        max_product = p
+    for j in range(0, len(number) - 13):
+        numbers = [int(i) for i in number[j:j + 13]]
+        p = helpers.product(numbers)
+        if p > max_product:
+            max_product = p
 
-print(max_product)
+    return max_product

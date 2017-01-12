@@ -2,10 +2,11 @@
 Problem 7: What is the 10 001st prime number?
 """
 
-from euler.helpers import primes
+from . import helpers
 
-gen = primes()
-for i in range(10000):
-    next(gen)
 
-print(next(gen))
+def solve():
+    gen = helpers.primes()
+    for i in range(10000):
+        next(gen)
+    return next(gen)

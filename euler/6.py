@@ -44,4 +44,5 @@ def square_of_sum(lower, upper):
     return pow(total, 2)
 
 
-print(square_of_sum(1, 100) - sum_of_squares(1, 100))
+def solve():
+    return square_of_sum(1, 100) - sum_of_squares(1, 100)

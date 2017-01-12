@@ -4,8 +4,10 @@ Problem 24: What is the millionth lexicographic permutation of the digits 0,1,2,
 
 from itertools import permutations
 
-gen = permutations("0123456789")
-for i in range(1000000 - 1):
-    next(gen)
 
-print("".join(next(gen)))
+def solve():
+    gen = permutations("0123456789")
+    for i in range(1000000 - 1):
+        next(gen)
+
+    return "".join(next(gen))

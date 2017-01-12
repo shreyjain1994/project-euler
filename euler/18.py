@@ -5,7 +5,9 @@ numbers on the next row.
 Algorithm: Dynamic Programming
 """
 
-string = '''75
+
+def solve():
+    string = '''75
 95 64
 17 47 82
 18 35 87 10
@@ -21,11 +23,11 @@ string = '''75
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23'''
 
-grid = [[int(i) for i in j.split(" ")] for j in string.split("\n")]
+    grid = [[int(i) for i in j.split(" ")] for j in string.split("\n")]
 
-# update the grid, grid[i][j] will represent max value path from i,j to bottom of pyramid, bottom up approach
-for i in range(13, -1, -1):
-    for j in range(i, -1, -1):
-        grid[i][j] += max(grid[i + 1][j], grid[i + 1][j + 1])
+    # update the grid, grid[i][j] will represent max value path from i,j to bottom of pyramid, bottom up approach
+    for i in range(13, -1, -1):
+        for j in range(i, -1, -1):
+            grid[i][j] += max(grid[i + 1][j], grid[i + 1][j + 1])
 
-print(grid[0][0])
+    return grid[0][0]

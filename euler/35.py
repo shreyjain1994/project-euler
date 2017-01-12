@@ -2,7 +2,7 @@
 Problem 35: How many circular primes are there below one million?
 """
 
-from euler import helpers
+from . import helpers
 
 
 def rotations(n):
@@ -55,7 +55,3 @@ def solve():
             circular_primes += 1
 
     return circular_primes
-
-
-if __name__ == "__main__":
-    print(solve())

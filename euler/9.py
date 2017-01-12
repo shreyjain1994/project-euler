@@ -20,15 +20,16 @@ def is_pythagorean_triplet(a, b, c):
     return pow(a, 2) + pow(b, 2) == pow(c, 2)
 
 
-# in order for a < b < c, the max value that a can take on is 332, since then, b could be 333 and c could be 334
-max_a = 332
+def solve():
+    # in order for a < b < c, the max value that a can take on is 332, since then, b could be 333 and c could be 334
+    max_a = 332
 
-for i in range(1, max_a + 1):
+    for i in range(1, max_a + 1):
 
-    # ensures that c >= b
-    max_b = (1000 - i) // 2
+        # ensures that c >= b
+        max_b = (1000 - i) // 2
 
-    for j in range(i + 1, max_b + 1):
-        k = 1000 - i - j
-        if is_pythagorean_triplet(i, j, k):
-            print(i * j * k)
+        for j in range(i + 1, max_b + 1):
+            k = 1000 - i - j
+            if is_pythagorean_triplet(i, j, k):
+                return i * j * k

@@ -83,5 +83,6 @@ def num_of_letters(n):
         return 11
 
 
-total = sum(num_of_letters(i) for i in range(1, 1001))
-print(total)
+def solve():
+    total = sum(num_of_letters(i) for i in range(1, 1001))
+    return total
