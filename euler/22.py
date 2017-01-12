@@ -2,6 +2,8 @@
 Problem 22: What is the total of all the name scores in the file?
 """
 
+from . import helpers
+
 
 def word_value(word):
     """
@@ -24,10 +26,11 @@ def word_value(word):
     return sum(ord(i) - 96 for i in word)
 
 
-with open("../resources/22.txt") as f:
-    string = f.read()
+def solve():
+    with open(helpers.get_resource_path(22)) as f:
+        string = f.read()
 
-names = [i[1:-1] for i in string.split(",")]
-names.sort()
-total = sum((index + 1) * word_value(name) for index, name in enumerate(names))
-print(total)
+    names = [i[1:-1] for i in string.split(",")]
+    names.sort()
+    total = sum((index + 1) * word_value(name) for index, name in enumerate(names))
+    return total

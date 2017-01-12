@@ -4,6 +4,7 @@ Problem 54: Given a set of poker hands for 2 players, determine the number of ha
 
 from collections import Counter
 from operator import itemgetter
+from . import helpers
 
 
 class Card(object):
@@ -96,14 +97,15 @@ class PokerHand(object):
         return self.value() < other.value()
 
 
-player_one_wins = 0
+def solve():
+    player_one_wins = 0
 
-with open("../resources/54.txt") as f:
-    for line in f:
-        c = [Card(i) for i in line.split(" ")]
-        hand_one = PokerHand(c[0:5])
-        hand_two = PokerHand(c[5:10])
-        if hand_one > hand_two:
-            player_one_wins += 1
+    with open(helpers.get_resource_path(54)) as f:
+        for line in f:
+            c = [Card(i) for i in line.split(" ")]
+            hand_one = PokerHand(c[0:5])
+            hand_two = PokerHand(c[5:10])
+            if hand_one > hand_two:
+                player_one_wins += 1
 
-print(player_one_wins)
+    return player_one_wins
