@@ -6,14 +6,4 @@ from . import helpers
 
 
 def solve():
-    total = 0
-    gen = helpers.primes()
-
-    while True:
-        current = next(gen)
-        if current < 2000000:
-            total += current
-        else:
-            break
-
-    return total
+    return sum(helpers.primes_sieve(1999999))

@@ -6,16 +6,7 @@ from . import helpers
 
 
 def solve():
-    # create list of primes
-    gen = helpers.primes()
-    primes = []
-    while True:
-        current = next(gen)
-        if current >= 1000000:
-            break
-        else:
-            primes.append(current)
-
+    primes = list(helpers.primes_sieve(999999))
     primes_set = set(primes)
 
     longest_chain = 0

@@ -71,6 +71,59 @@ def primes():
         yield i
 
 
+def primes_sieve(highest):
+    """
+    Generates all primes up to and including the max number using the sieve algorithm as
+    explained at https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes with some other little optimizations of my own.
+
+    >>> gen = primes_sieve(71)
+    >>> list(gen)
+    [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
+    >>> gen = primes_sieve(70)
+    >>> list(gen)
+    [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67]
+
+    :param highest: The upper bound of the prime numbers that are found.
+    """
+
+    if highest < 2:
+        return
+    yield 2
+    if highest == 2:
+        return
+
+    sieve = [1] * (highest + 1)
+
+    # by starting at 3, it saves us the step of negating all even values in the sieve
+    current = 3
+
+    while True:
+        yield current
+
+        # remove multiples of current primes
+        # choosing to increment by 2*current each time since if I increment by just current, we get an even number(since
+        # two odd numbers added give even number) and there is no point in negating an even number in the sieve. By
+        # incrementing by 2*current each time, we are guaranteed only the odd multiples of current, and thus we save
+        # about half the negating steps.
+        i = current + current*2
+        while i <= highest:
+            sieve[i] = 0
+            i += current*2
+
+        # find next prime
+        # choosing to increment by 2 since the prime numbers can only be odd and we started with 3 (having yielded 2)
+        i = current + 2
+        while i <= highest:
+            if sieve[i]:
+                current = i
+                break
+            i += 2
+
+        # no more primes
+        if i > highest:
+            break
+
+
 def is_palindrome(n, case_sensitive=False):
     """
     Determine if n is a palindrome (i.e. reads the same backwards and forwards). If n is not a string, then the string
@@ -168,4 +221,4 @@ def is_pythagorean_triplet(a, b, c):
     :rtype: bool
     """
 
-    return a*a + b*b == c*c
+    return a * a + b * b == c * c

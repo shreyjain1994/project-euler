@@ -85,6 +85,9 @@ def test():
                 continue
 
     number_of_problems = len(problems)
+
+    # start for higher problems first so that the remaining time is more accurate (hopefully)
+    problems.sort(reverse=True)
     test_start_time = time.time()
 
     # list of tuples of format (problem, time_taken, solution)

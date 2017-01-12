@@ -35,16 +35,7 @@ def rotations(n):
 
 def solve():
 
-    gen = helpers.primes()
-    primes = set()
-
-    # generate primes
-    while True:
-        prime = next(gen)
-        if prime < 1000000:
-            primes.add(prime)
-        else:
-            break
+    primes = set(helpers.primes_sieve(999999))
 
     circular_primes = 0
 
