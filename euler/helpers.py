@@ -3,6 +3,7 @@ Commonly used functions throughout project euler problems.
 """
 
 import math
+import os
 
 
 def is_prime(n):
@@ -140,3 +141,14 @@ def factors(n, sort=False):
         f.sort()
 
     return f
+
+
+def get_resource_path(number):
+    """
+    Get the path of the resource for a particular euler problem.
+
+    :param number: The euler problem for which the resource is required.
+    :rtype: str
+    """
+    resource = "../resources/{}.txt".format(number)
+    return os.path.join(os.path.dirname(__file__), resource)
